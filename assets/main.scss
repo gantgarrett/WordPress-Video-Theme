@@ -10,7 +10,21 @@
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "../node_modules/bootstrap/scss/functions";
 
-// 2. Include any default variable overrides here
+/* 2. START HERE for changing variables :)
+ *	Read for more info: 
+ *	https://getbootstrap.com/docs/4.5/getting-started/theming/
+*/
+
+// Background color
+$body-bg: #181818;
+$body-color: #ffffff;
+$card-bg: #181818!important;
+
+// Native navbar color changes
+$navbar-light-brand-color: #ffffff;
+$navbar-light-brand-hover-color:#ffffff;
+
+
 
 // Options
 $enable-caret: true;
@@ -192,7 +206,7 @@ img {
 /* Footer */
 
 #footer {
-	background-color: #fff;
+	background-color: #181818;
 
 	p {
 		margin-top: 10px;

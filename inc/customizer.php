@@ -64,7 +64,6 @@ function wp_video_theme_customize( $wp_customize ) {
 			'label'    => __( 'Navbar Scheme', 'wp-video-theme' ),
 			'section'  => 'theme_header_section',
 			'choices'  => array(
-				'navbar-light bg-light'  => __( 'Default', 'wp-video-theme' ),
 				'navbar-dark bg-dark'    => __( 'Dark', 'wp-video-theme' ),
 				'navbar-dark bg-primary' => __( 'Primary', 'wp-video-theme' ),
 			),
