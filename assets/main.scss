@@ -18,15 +18,31 @@
 // Background color
 $body-bg: #181818;
 $body-color: #ffffff;
-$card-bg: #181818;
+$card-bg: #181818; 
 
 // Main colors 
-$bg-primary: #ff0101!important;
-$bg-dark: #202020!important;
+$bg-primary: $red;
+$bg-dark: #202020;
 
 // Native navbar color changes
 $navbar-light-brand-color: #ffffff;
 $navbar-light-brand-hover-color:#ffffff;
+
+//Links 
+$link-color:                              $primary !default;
+$link-decoration:                         underline !default;
+$link-shade-percentage:                   20% !default;
+$link-hover-color:                        shift-color($link-color, $link-shade-percentage) !default;
+$link-hover-decoration:                   null !default;
+
+$stretched-link-pseudo-element:           after !default;
+$stretched-link-z-index:                  1 !default;
+
+// Paragraphs
+//
+// Style p element.
+$paragraph-margin-bottom:   0rem !important;
+$headings-margin-bottom: 0rem !important;
 
 // Options
 $enable-caret: true;
