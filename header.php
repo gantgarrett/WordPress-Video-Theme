@@ -24,7 +24,10 @@
 	<header>
 		<nav id="header" class="navbar bg-dark navbar-expand-md <?php echo esc_attr( $navbar_scheme ); if ( isset( $navbar_position ) && 'fixed_top' === $navbar_position ) : echo ' fixed-top'; elseif ( isset( $navbar_position ) && 'fixed_bottom' === $navbar_position ) : echo ' fixed-bottom'; endif; if ( is_home() || is_front_page() ) : echo ' home'; endif; ?>">
 			<div class="container">
-				<a class="navbar-brand d-flex align-items-center" href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+				<button class="bg-dark border-0 py-2 px-2 me-2" title="Sidebar Menu" type="button">
+					<?php echo file_get_contents(get_template_directory().'/assets/images/svg/hamburger.svg'); ?>
+				</button>
+				<a class="navbar-brand d-flex p-0 pt-1" href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 					<?php
 						$header_logo = get_theme_mod( 'header_logo' ); // Get custom meta-value.
 
@@ -71,6 +74,10 @@
 			</div><!-- /.container -->
 		</nav><!-- /#header -->
 	</header>
+
+	<div class="sidebar-left">
+		Sidebar
+	</div>
 
 	<main id="main" class="container"<?php if ( isset( $navbar_position ) && 'fixed_top' === $navbar_position ) : echo ' style="padding-top: 100px;"'; elseif ( isset( $navbar_position ) && 'fixed_bottom' === $navbar_position ) : echo ' style="padding-bottom: 100px;"'; endif; ?>>
 		<?php
