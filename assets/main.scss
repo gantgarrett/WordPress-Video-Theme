@@ -18,13 +18,15 @@
 // Background color
 $body-bg: #181818;
 $body-color: #ffffff;
-$card-bg: #181818!important;
+$card-bg: #181818;
+
+// Main colors 
+$bg-primary: #ff0101!important;
+$bg-dark: #202020!important;
 
 // Native navbar color changes
 $navbar-light-brand-color: #ffffff;
 $navbar-light-brand-hover-color:#ffffff;
-
-
 
 // Options
 $enable-caret: true;
@@ -377,4 +379,10 @@ img {
 	#sidebar {
 		margin-top: 60px;
 	}
+}
+
+@media (min-width: breakpoint-max(lg)) {
+    .container{
+        max-width: 1920px;
+    }
 }
