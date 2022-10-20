@@ -5,7 +5,7 @@
 
 if ( is_active_sidebar( 'primary_widget_area' ) || is_archive() || is_single() ) :
 ?>
-<div id="sidebar" style="width:50px" class="sidenav">
+<div id="sidebar" class="sidenav" style="width:250px">
 	<?php
 		if ( is_active_sidebar( 'primary_widget_area' ) ) :
 	?>
