@@ -13,19 +13,20 @@
 /* 2. START HERE for changing variables */
 // Page background color
 $body-bg: #181818;
-$body-color: #ffffff;
+$body-color: #fff;
 $card-bg: #181818; 
 
 // Main colors 
-$bg-primary: $red;
+$bg-primary: #909090;
 $bg-dark: #202020;
 
 // Native navbar color changes
-$navbar-light-brand-color: #ffffff;
-$navbar-light-brand-hover-color:#ffffff;
+$navbar-light-brand-color: #fff;
+$navbar-light-brand-hover-color: #fff;
 
-//Links 
-$link-color:#ffffff!important;
+//Link colors
+$link-color: #fff;
+$link-hover-color: #fff;
 
 // Paragraphs
 //
@@ -127,6 +128,9 @@ $link-decoration: none;
 
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import "../node_modules/bootstrap/scss/utilities/api";
+
+// 8. Custom SCSS 
+@import "../assets/scss/sidebar";
 
 
 /**

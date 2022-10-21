@@ -1,0 +1,12 @@
+//Set these as class names in WP admin -> Menus
+.open-nav-btn, .closed-nav-btn {
+    a {
+        display: block;
+        padding: 0.5rem 1rem;
+    }
+    &:hover {
+        background: #606060;
+    }
+}
+
+

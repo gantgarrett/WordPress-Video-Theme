@@ -12,7 +12,8 @@ if ( is_active_sidebar( 'primary_widget_area' ) || is_archive() || is_single() )
 		<?php wp_nav_menu( array( 
 			'menu' => 'Sidebar open menu', 
 			'container_class' => 'sidebar-open-menu position-absolute w-100', 
-			'menu_class'     => 'open-menu m-0 ps-3 list-unstyled text-primary',
+			'menu_class'     => 'open-menu m-0 list-unstyled',
+			'li_class' => 'open-menu-item',
 		)); ?>
 	</div>
 
@@ -21,7 +22,8 @@ if ( is_active_sidebar( 'primary_widget_area' ) || is_archive() || is_single() )
 		<?php wp_nav_menu( array( 
 			'menu' => 'Sidebar closed menu', 
 			'container_class' => 'sidebar-closed-menu position-absolute',
-			'menu_class'     => 'closed-menu m-0 ps-3 list-unstyled text-primary', 
+			'menu_class'     => 'closed-menu <m-0></m-0> list-unstyled', 
+			'li_class' => 'closed-menu-item',
 		)); ?>
 	</div>
 

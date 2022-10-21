@@ -490,3 +490,12 @@ function wp_video_theme_scripts_loader() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'wp_video_theme_scripts_loader' );
+
+//Add class name to menu items
+function add_additional_class_on_li($classes, $item, $args) {
+    if(isset($args->li_class)) {
+        $classes[] = $args->li_class;
+    }
+    return $classes;
+}
+add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
