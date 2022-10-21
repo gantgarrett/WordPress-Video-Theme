@@ -5,8 +5,14 @@
         padding: 0.5rem 1rem;
     }
     &:hover {
-        background: #606060;
+        background: #383939;
     }
 }
 
+.current-menu-item {
+    background: #383939;
 
+    &:hover {
+        background:#686868; 
+    }
+}
