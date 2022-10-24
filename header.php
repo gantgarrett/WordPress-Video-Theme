@@ -49,7 +49,7 @@
 							<form class="search-form my-2 my-lg-0" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 								<div class="input-group">
 									<input type="text" name="s" class="form-control border-0" placeholder="<?php esc_attr_e( 'Search', 'wp-video-theme' ); ?>" title="<?php esc_attr_e( 'Search', 'wp-video-theme' ); ?>" />
-									<button type="submit" name="submit" title="search" class="btn header-search-btn px-3"><?php echo file_get_contents(get_template_directory().'/assets/images/svg/search.svg'); ?></button>
+									<button type="submit" name="submit" title="search" class="btn bg-secondary px-3"><?php echo file_get_contents(get_template_directory().'/assets/images/svg/search.svg'); ?></button>
 								</div>
 							</form>
 						<?php endif;?>
