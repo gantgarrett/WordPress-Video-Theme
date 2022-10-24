@@ -24,53 +24,38 @@
 	<header>
 		<nav id="header" class="navbar navbar-expand-md <?php echo esc_attr( $navbar_scheme ); if ( isset( $navbar_position ) && 'fixed_top' === $navbar_position ) : echo ' fixed-top'; elseif ( isset( $navbar_position ) && 'fixed_bottom' === $navbar_position ) : echo ' fixed-bottom'; endif; if ( is_home() || is_front_page() ) : echo ' home'; endif; ?>">
 			<div class="container px-0">
-				<button onclick="sidebarToggle()" class="sidebar-toggler bg-dark border-0 py-2 px-2 mx-2" title="Sidebar Menu" type="button">
-					<?php echo file_get_contents(get_template_directory().'/assets/images/svg/hamburger.svg'); ?>
-				</button>
-				<a class="navbar-brand d-flex p-0 pt-1 mx-1" href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-					<?php
-						$header_logo = get_theme_mod( 'header_logo' ); // Get custom meta-value.
+				<div class="row w-100 align-items-center">
+					<div class="col d-flex align-items-center">
+						<button onclick="sidebarToggle()" class="sidebar-toggler bg-dark border-0 py-2 px-2 mx-2" title="Sidebar Menu" type="button">
+							<?php echo file_get_contents(get_template_directory().'/assets/images/svg/hamburger.svg'); ?>
+						</button>
+						<a class="navbar-brand d-flex p-0 pt-1 mx-1" href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+							<?php
+								$header_logo = get_theme_mod( 'header_logo' ); // Get custom meta-value.
 
-						if ( ! empty( $header_logo ) ) :
-					?>
-						<img src="<?php echo esc_url( $header_logo ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
-					<?php
-						else :
-							echo file_get_contents(get_template_directory().'/assets/images/svg/youtube.svg');
-							echo '<p class="h5 px-1 mb-0">'; echo esc_attr( get_bloginfo( 'name', 'display' ) ); echo '</p>';
-						endif;
-					?>
-				</a>
-
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'wp-video-theme' ); ?>">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-
-				<div id="navbar" class="collapse navbar-collapse">
-					<?php
-						// Loading WordPress Custom Menu (theme_location).
-						wp_nav_menu(
-							array(
-								'theme_location' => 'main-menu',
-								'container'      => '',
-								'menu_class'     => 'navbar-nav me-auto',
-								'fallback_cb'    => 'WP_Bootstrap_Navwalker::fallback',
-								'walker'         => new WP_Bootstrap_Navwalker(),
-							)
-						);
-
-						if ( '1' === $search_enabled ) :
-					?>
+								if ( ! empty( $header_logo ) ) :
+							?>
+								<img src="<?php echo esc_url( $header_logo ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+							<?php
+								else :
+									echo file_get_contents(get_template_directory().'/assets/images/svg/youtube.svg');
+									echo '<p class="h5 px-1 mb-0">'; echo esc_attr( get_bloginfo( 'name', 'display' ) ); echo '</p>';
+								endif;
+							?>
+						</a>
+					</div>
+					<div class="col-6 d-flex justify-content-center">			
+						<?php if ( '1' === $search_enabled ) : ?>
 							<form class="search-form my-2 my-lg-0" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 								<div class="input-group">
 									<input type="text" name="s" class="form-control" placeholder="<?php esc_attr_e( 'Search', 'wp-video-theme' ); ?>" title="<?php esc_attr_e( 'Search', 'wp-video-theme' ); ?>" />
 									<button type="submit" name="submit" class="btn btn-outline-secondary"><?php esc_html_e( 'Search', 'wp-video-theme' ); ?></button>
 								</div>
 							</form>
-					<?php
-						endif;
-					?>
-				</div><!-- /.navbar-collapse -->
+						<?php endif;?>
+					</div>
+					<div class="col d-flex justify-content-end">Test</div>
+				</div>
 			</div><!-- /.container -->
 		</nav><!-- /#header -->
 	</header>
