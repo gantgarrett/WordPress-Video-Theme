@@ -1,7 +1,8 @@
 //Set these as class names in WP admin -> Menus
 .open-nav-btn, .closed-nav-btn {
     a {
-        display: block;
+        display: flex;
+        justify-content: flex-start;
         padding: 0.5rem 1rem;
     }
     &:hover {
@@ -14,5 +15,15 @@
 
     &:hover {
         background:#686868; 
+    }
+}
+
+.open-menu-item {
+    a {
+        &:before {
+            content: url('../images/svg/home.svg');
+            display: inline-block;
+            margin-right: 1.5rem;
+        }
     }
 }
