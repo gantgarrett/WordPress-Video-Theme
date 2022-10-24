@@ -17,8 +17,8 @@ $body-color: #fff;
 $card-bg: #181818; 
 
 // Main colors 
-$bg-primary: #909090;
 $bg-dark: #202020;
+$bg-secondary: #383939;
 
 // Native navbar color changes
 $navbar-light-brand-color: #fff;
@@ -194,7 +194,7 @@ img {
 
 #header {
 	.search-form {
-		min-width: 250px;
+		min-width: 450px;
 	}
 }
 

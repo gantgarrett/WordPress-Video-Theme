@@ -48,13 +48,32 @@
 						<?php if ( '1' === $search_enabled ) : ?>
 							<form class="search-form my-2 my-lg-0" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 								<div class="input-group">
-									<input type="text" name="s" class="form-control" placeholder="<?php esc_attr_e( 'Search', 'wp-video-theme' ); ?>" title="<?php esc_attr_e( 'Search', 'wp-video-theme' ); ?>" />
-									<button type="submit" name="submit" class="btn btn-outline-secondary"><?php esc_html_e( 'Search', 'wp-video-theme' ); ?></button>
+									<input type="text" name="s" class="form-control border-0" placeholder="<?php esc_attr_e( 'Search', 'wp-video-theme' ); ?>" title="<?php esc_attr_e( 'Search', 'wp-video-theme' ); ?>" />
+									<button type="submit" name="submit" title="search" class="btn header-search-btn px-3"><?php echo file_get_contents(get_template_directory().'/assets/images/svg/search.svg'); ?></button>
 								</div>
 							</form>
 						<?php endif;?>
 					</div>
-					<div class="col d-flex justify-content-end">Test</div>
+					<div class="col d-flex justify-content-end align-items-end">
+						<div class="row">
+							<div class="col-sm px-3">
+								<?php echo file_get_contents(get_template_directory().'/assets/images/svg/upload.svg'); ?>
+							</div>
+							<div class="col-sm px-3">
+								<?php echo file_get_contents(get_template_directory().'/assets/images/svg/bell.svg'); ?>
+							</div>
+							<div class="col-sm px-3">
+							<?php 
+								if ( is_user_logged_in() ) {
+									$current_user = wp_get_current_user();
+									if ( ($current_user instanceof WP_User) ) {
+										echo get_avatar( $current_user->ID, 24);
+									}
+								} 
+							?>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div><!-- /.container -->
 		</nav><!-- /#header -->
