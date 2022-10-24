@@ -1,8 +1,7 @@
 //Set these as class names in WP admin -> Menus
-.open-nav-btn, .closed-nav-btn {
+.open-nav-btn {
     a {
         display: flex;
-        justify-content: flex-start;
         padding: 0.5rem 1rem;
     }
     &:hover {
@@ -10,6 +9,20 @@
     }
 }
 
+.closed-nav-btn {
+    a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        font-size: 0.55rem;
+    }
+    &:hover {
+        background: #383939;
+    }
+}
+
+//Current Nav menu item
 .current-menu-item {
     background: #383939;
 
@@ -19,11 +32,81 @@
 }
 
 .open-menu-item {
-    a {
-        &:before {
-            content: url('../images/svg/home.svg');
-            display: inline-block;
-            margin-right: 1.5rem;
+    &.home {
+        a {
+            &:before {
+                content: url('../images/svg/home.svg');
+                display: inline-block;
+                margin-right: 1.5rem;
+            }
+        }
+    }
+
+    &.shorts {
+        a {
+            &:before {
+                content: url('../images/svg/shorts.svg');
+                display: inline-block;
+                margin-right: 1.5rem;
+            }
+        }
+    }
+
+    &.subs {
+        a {
+            &:before {
+                content: url('../images/svg/subs.svg');
+                display: inline-block;
+                margin-right: 1.5rem;
+            }
+        }
+    }
+
+    &.library {
+        a {
+            &:before {
+                content: url('../images/svg/library.svg');
+                display: inline-block;
+                margin-right: 1.5rem;
+            }
+        }
+    }
+}
+
+.closed-menu-item {
+    &.home {
+        a {
+            &:before {
+                content: url('../images/svg/home.svg');
+                display: inline-block;
+            }
+        }
+    }
+
+    &.shorts {
+        a {
+            &:before {
+                content: url('../images/svg/shorts.svg');
+                display: inline-block;
+            }
+        }
+    }
+
+    &.subs {
+        a {
+            &:before {
+                content: url('../images/svg/subs.svg');
+                display: inline-block;
+            }
+        }
+    }
+
+    &.library {
+        a {
+            &:before {
+                content: url('../images/svg/library.svg');
+                display: inline-block;
+            }
         }
     }
 }
