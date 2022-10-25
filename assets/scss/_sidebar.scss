@@ -1,3 +1,17 @@
+.open-menu-wrapper, .closed-menu-wrapper {
+    margin-top: 0.5rem;
+}
+
+#menu-sidebar-closed-menu {
+    //Current Nav menu item
+    .current-menu-item {
+        background: $bg-dark;
+
+        &:hover {
+            background:#686868; 
+        }
+    }
+}
 //Set these as class names in WP admin -> Menus
 .open-nav-btn {
     a {
@@ -16,6 +30,7 @@
         align-items: center;
         padding: 0.5rem 1rem;
         font-size: 0.55rem;
+        background: $bg-dark;
     }
     &:hover {
         background: #383939;
@@ -75,6 +90,13 @@
 }
 
 .closed-menu-item {
+    a {
+        background: #212428;
+
+        &:hover {
+            background: $bg-secondary;
+        }
+    }
     &.home {
         a {
             &:before {

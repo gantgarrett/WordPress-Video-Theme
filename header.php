@@ -29,7 +29,7 @@
 						<button onclick="sidebarToggle()" class="sidebar-toggler bg-dark border-0 py-2 px-2 mx-2" title="Sidebar Menu" type="button">
 							<?php echo file_get_contents(get_template_directory().'/assets/images/svg/hamburger.svg'); ?>
 						</button>
-						<a class="navbar-brand d-flex p-0 pt-1 mx-1" href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+						<a class="navbar-brand d-flex p-0 pt-1 mx-1 ms-2" href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 							<?php
 								$header_logo = get_theme_mod( 'header_logo' ); // Get custom meta-value.
 
@@ -56,22 +56,24 @@
 					</div>
 					<div class="col d-flex justify-content-end align-items-end">
 						<div class="row">
-							<div class="col-sm px-3">
-								<?php echo file_get_contents(get_template_directory().'/assets/images/svg/upload.svg'); ?>
-							</div>
-							<div class="col-sm px-3">
-								<?php echo file_get_contents(get_template_directory().'/assets/images/svg/bell.svg'); ?>
-							</div>
-							<div class="col-sm px-3">
-							<?php 
-								if ( is_user_logged_in() ) {
-									$current_user = wp_get_current_user();
-									if ( ($current_user instanceof WP_User) ) {
-										echo get_avatar( $current_user->ID, 24);
-									}
-								} 
-							?>
-							</div>
+							<?php if (is_user_logged_in() ) : ?>
+								<div class="col-sm px-3">
+									<?php echo file_get_contents(get_template_directory().'/assets/images/svg/upload.svg'); ?>
+								</div>
+								<div class="col-sm px-3">
+									<?php echo file_get_contents(get_template_directory().'/assets/images/svg/bell.svg'); ?>
+								</div>
+								<div class="col-sm px-3">
+									<?php $current_user = wp_get_current_user(); 
+										if ( ($current_user instanceof WP_User) ) {
+											echo get_avatar( $current_user->ID, 24);
+										} 
+									?>
+								</div>
+								<?php else : ?>
+									<div class="col-sm px-3">Dots</div> 
+									<div class="col-sm px-3">Sign in</div> 
+							<?php endif; ?>
 						</div>
 					</div>
 				</div>
