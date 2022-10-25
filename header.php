@@ -49,21 +49,30 @@
 							<form class="search-form my-2 my-lg-0" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 								<div class="input-group">
 									<input type="text" name="s" class="form-control border-0" placeholder="<?php esc_attr_e( 'Search', 'wp-video-theme' ); ?>" title="<?php esc_attr_e( 'Search', 'wp-video-theme' ); ?>" />
-									<button type="submit" name="submit" title="search" class="btn bg-secondary px-3"><?php echo file_get_contents(get_template_directory().'/assets/images/svg/search.svg'); ?></button>
+									<button type="submit" name="submit" title="Search" class="search-btn-main btn px-3">
+										<?php echo file_get_contents(get_template_directory().'/assets/images/svg/search.svg'); ?>
+									</button>
 								</div>
 							</form>
+							<button type="button" title="Search with your voice" class="search-mic-icon ms-2 px-2 rounded-circle border-0">
+								<?php echo file_get_contents(get_template_directory().'/assets/images/svg/mic.svg'); ?>
+							</button>
 						<?php endif;?>
 					</div>
-					<div class="col d-flex justify-content-end align-items-end">
+					<div class="col d-flex justify-content-end align-items-end pe-3">
 						<div class="row align-items-center">
 							<?php if (is_user_logged_in() ) : ?>
-								<div class="col-sm px-3">
-									<?php echo file_get_contents(get_template_directory().'/assets/images/svg/upload.svg'); ?>
+								<div class="col-sm px-2">
+									<button type="button" title="Upload" class="upload-btn bg-dark border-0">
+										<?php echo file_get_contents(get_template_directory().'/assets/images/svg/upload.svg'); ?>
+									</button>
 								</div>
-								<div class="col-sm px-3">
-									<?php echo file_get_contents(get_template_directory().'/assets/images/svg/bell.svg'); ?>
+								<div class="col-sm px-2">
+									<button type="button" title="Notifications" class="upload-btn bg-dark border-0">
+										<?php echo file_get_contents(get_template_directory().'/assets/images/svg/bell.svg'); ?>
+									</button>
 								</div>
-								<div class="col-sm px-3">
+								<div class="col-sm px-2">
 									<?php $current_user = wp_get_current_user(); 
 										if ( ($current_user instanceof WP_User) ) {
 											echo get_avatar( $current_user->ID, 24);
