@@ -1,0 +1,8 @@
+.sign-in-btn {
+    &:before {
+        content: url('../images/svg/user.svg');
+        display: inline-block;
+        margin-top: 0.2rem;
+        margin-right: 0.4rem;
+    }
+}

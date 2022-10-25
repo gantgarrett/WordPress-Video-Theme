@@ -55,7 +55,7 @@
 						<?php endif;?>
 					</div>
 					<div class="col d-flex justify-content-end align-items-end">
-						<div class="row">
+						<div class="row align-items-center">
 							<?php if (is_user_logged_in() ) : ?>
 								<div class="col-sm px-3">
 									<?php echo file_get_contents(get_template_directory().'/assets/images/svg/upload.svg'); ?>
@@ -71,8 +71,18 @@
 									?>
 								</div>
 								<?php else : ?>
-									<div class="col-sm px-3">Dots</div> 
-									<div class="col-sm px-3">Sign in</div> 
+									<div class="col-3">
+										<button class="bg-dark border-0">
+											<?php echo file_get_contents(get_template_directory().'/assets/images/svg/three-dots-vertical.svg'); ?>
+										</button>
+									</div> 
+									<div class="col-9 px-3">
+										<button class="sign-in-btn bg-dark border-1 border-primary py-1 px-3 d-flex align-items-center">
+											<a href="#" class="text-primary">
+												SIGN IN
+											</a>
+										</button>
+									</div> 
 							<?php endif; ?>
 						</div>
 					</div>
