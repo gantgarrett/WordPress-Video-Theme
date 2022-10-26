@@ -44,7 +44,7 @@
 							?>
 						</a>
 					</div>
-					<div class="col-6 d-flex justify-content-center">			
+					<div class="col-6 d-flex justify-content-center align-items-center">			
 						<?php if ( '1' === $search_enabled ) : ?>
 							<form class="search-form my-2 my-lg-0" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 								<div class="input-group">
