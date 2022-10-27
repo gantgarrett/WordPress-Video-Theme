@@ -13,11 +13,22 @@ $page_id = get_option( 'page_for_posts' );
 <?php get_template_part( 'sidebar' ); ?>
 
 <div class="container-fluid p-0 d-flex flex-column">
-	<div class="cats-carousel-container container-fluid p-0 pb-1">
+	<div class="cats-carousel-container position-sticky container-fluid p-0 pb-1">
 		<div class="cats-carousel">
-			<div>1</div>
-			<div>2</div>
-			<div>3</div>
+			<?php 
+			$categories = get_categories( array(
+				'orderby'       => 'name', //Defaults to 'date'
+				'order'         => 'ASC', //Defaults to 'DESC'.
+				'hide_empty'    => false, //defaults to true,
+			));
+			?>
+			<ul class="blog-category">
+			<?php
+			foreach( $categories as $category ) {
+				echo '<li class="category-item"><a class="category-link" href="' . get_category_link($category->term_id) . '">' . $category->name . '</a></li>'; 
+			} 
+			?>
+			</ul>
 		</div>
 	</div>
 	<div id="main-content" class="row">
