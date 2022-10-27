@@ -13,7 +13,7 @@ $page_id = get_option( 'page_for_posts' );
 <?php get_template_part( 'sidebar' ); ?>
 
 <div class="container-fluid p-0 d-flex flex-column">
-	<div class="container-fluid p-0">
+	<div class="cats-carousel-container container-fluid p-0 pb-1">
 		<div class="cats-carousel">
 			<div>1</div>
 			<div>2</div>
