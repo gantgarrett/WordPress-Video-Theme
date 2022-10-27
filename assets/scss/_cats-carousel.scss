@@ -1,3 +1,21 @@
+.cats-carousel {
+    width: 85%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    .slick-prev {
+        left: -7px;
+        @media only screen and (max-width: 991px) {
+           display: block!important;
+        }
+    }
+
+    @media only screen and (max-width: 991px) {
+        width: 100%;
+    }
+}
+
 .category-link {
     background: #383838;
 

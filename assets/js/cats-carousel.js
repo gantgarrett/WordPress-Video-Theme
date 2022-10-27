@@ -1,10 +1,7 @@
 jQuery(document).ready(function(){
-    jQuery('.cats-carousel').slick({
-        dots: true,
-        infinite: false,
+    jQuery('.category-chips').slick({
         speed: 300,
-        slidesToShow: 4,
-        slidesToScroll: 4,
+        slidesToScroll: 1,
         variableWidth: true,
         responsive: [
             {
@@ -30,9 +27,11 @@ jQuery(document).ready(function(){
                 slidesToScroll: 1
             }
             }
-            // You can unslick at a given breakpoint now by adding:
-            // settings: "unslick"
-            // instead of a settings object
         ]
+    });
+    jQuery('.slick-prev').hide();
+
+    jQuery('.slick-next').click(function(){
+        jQuery('.slick-prev').show();
     });
 });
