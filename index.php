@@ -25,7 +25,7 @@ $page_id = get_option( 'page_for_posts' );
 			<ul class="blog-category list-unstyled d-flex mb-0">
 				<?php
 					foreach( $categories as $category ) {
-						echo '<li class="category-item"><a class="category-link" href="' . get_category_link($category->term_id) . '">' . $category->name . '</a></li>'; 
+						echo '<li class="category-item px-2"><a class="category-link btn" href="' . get_category_link($category->term_id) . '">' . $category->name . '</a></li>'; 
 					} 
 				?>
 			</ul>
