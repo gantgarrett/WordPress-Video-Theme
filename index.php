@@ -13,21 +13,21 @@ $page_id = get_option( 'page_for_posts' );
 <?php get_template_part( 'sidebar' ); ?>
 
 <div class="container-fluid p-0 d-flex flex-column">
-	<div class="cats-carousel-container position-sticky container-fluid p-0 pb-1">
-		<div class="cats-carousel">
+	<div class="cats-carousel-container mt-lg-0 mt-md-2 pt-2 pb-2 ps-2 pe-2">
+		<div class="cats-carousel m-0">
 			<?php 
-			$categories = get_categories( array(
-				'orderby'       => 'name', //Defaults to 'date'
-				'order'         => 'ASC', //Defaults to 'DESC'.
-				'hide_empty'    => false, //defaults to true,
-			));
+				$categories = get_categories( array(
+					'orderby'       => 'name', //Defaults to 'date'
+					'order'         => 'ASC', //Defaults to 'DESC'.
+					'hide_empty'    => false, //defaults to true,
+				));
 			?>
-			<ul class="blog-category">
-			<?php
-			foreach( $categories as $category ) {
-				echo '<li class="category-item"><a class="category-link" href="' . get_category_link($category->term_id) . '">' . $category->name . '</a></li>'; 
-			} 
-			?>
+			<ul class="blog-category list-unstyled d-flex mb-0">
+				<?php
+					foreach( $categories as $category ) {
+						echo '<li class="category-item"><a class="category-link" href="' . get_category_link($category->term_id) . '">' . $category->name . '</a></li>'; 
+					} 
+				?>
 			</ul>
 		</div>
 	</div>

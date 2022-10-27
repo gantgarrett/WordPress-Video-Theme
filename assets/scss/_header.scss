@@ -20,5 +20,6 @@
 
 .cats-carousel-container {
     border-top: 2px solid $chips; 
-    border-bottom: 2px solid $chips; 
+    border-bottom: 2px solid $chips;
+    z-index: 2000; 
 }
