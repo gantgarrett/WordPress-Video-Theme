@@ -44,7 +44,7 @@
 							?>
 						</a>
 					</div>
-					<div class="col-6 d-flex justify-content-center align-items-center">			
+					<div class="col-6 d-flex justify-content-center align-items-center d-none d-md-flex">			
 						<?php if ( '1' === $search_enabled ) : ?>
 							<form class="search-form my-2 my-lg-0" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 								<div class="input-group">
@@ -60,19 +60,29 @@
 						<?php endif;?>
 					</div>
 					<div class="col d-flex justify-content-end align-items-end pe-3">
-						<div class="row align-items-center">
+						<div class="row">
 							<?php if (is_user_logged_in() ) : ?>
-								<div class="col-sm px-2">
+								<div class="col px-1 d-md-none">
+									<button type="button" title="Search" class="search-btn bg-dark border-0">
+										<?php echo file_get_contents(get_template_directory().'/assets/images/svg/search.svg'); ?>
+									</button>
+								</div>
+								<div class="col px-1 d-md-none">
+									<button type="button" title="Search with your voice" class="mic-btn bg-dark border-0">
+										<?php echo file_get_contents(get_template_directory().'/assets/images/svg/mic.svg'); ?>
+									</button>
+								</div>
+								<div class="col px-1">
 									<button type="button" title="Upload" class="upload-btn bg-dark border-0">
 										<?php echo file_get_contents(get_template_directory().'/assets/images/svg/upload.svg'); ?>
 									</button>
 								</div>
-								<div class="col-sm px-2">
+								<div class="col px-1">
 									<button type="button" title="Notifications" class="upload-btn bg-dark border-0">
 										<?php echo file_get_contents(get_template_directory().'/assets/images/svg/bell.svg'); ?>
 									</button>
 								</div>
-								<div class="col-sm px-2">
+								<div class="col px-1">
 									<?php $current_user = wp_get_current_user(); 
 										if ( ($current_user instanceof WP_User) ) {
 											echo get_avatar( $current_user->ID, 24);
