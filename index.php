@@ -24,23 +24,16 @@ $page_id = get_option( 'page_for_posts' );
 			?>
 			<ul class="category-chips container list-unstyled m-0">
 				<?php
-					echo '<li class="category-item px-1"><a class="category-link btn" href="#">All</a></li>';
+					echo '<li class="js-filter-item category-item px-1"><a class="category-link btn" href="">All</a></li>';
 					foreach( $categories as $category ) {
-						echo '<li class="category-item px-1"><a class="category-link btn" href="' . get_category_link($category->term_id) . '">' . $category->name . '</a></li>'; 
+						echo '<li class="js-filter-item category-item px-1"><a class="category-link btn" href="' . get_category_link($category->term_id) . '">' . $category->name . '</a></li>'; 
 					} 
 				?>
 			</ul>
 		</div>
 	</div>
 	<div id="main-content" class="row">
-		<div class="col-md-12">
-			<?php
-				echo apply_filters( 'the_content', get_post_field( 'post_content', $page_id ) );
-
-				edit_post_link( __( 'Edit', 'wp-video-theme' ), '<span class="edit-link">', '</span>', $page_id );
-			?>
-		</div><!-- /.col -->
-		<div class="col-md-12">
+		<div class="col-md-12 js-filter">
 			<?php
 				get_template_part( 'archive', 'loop' );
 			?>
