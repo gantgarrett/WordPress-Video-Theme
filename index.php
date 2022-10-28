@@ -24,16 +24,16 @@ $page_id = get_option( 'page_for_posts' );
 			?>
 			<ul class="category-chips container list-unstyled m-0">
 				<?php
-					echo '<li class="js-filter-item category-item px-1"><a class="category-link btn" href="">All</a></li>';
+					echo '<li class="category-item px-1"><a id="cat-filter-item" class="js-filter-item category-link btn" href="">All</a></li>';
 					foreach( $categories as $category ) {
-						echo '<li class="js-filter-item category-item px-1"><a class="category-link btn" href="' . get_category_link($category->term_id) . '">' . $category->name . '</a></li>'; 
+						echo '<li class="category-item px-1"><a id="cat-filter-item" class="js-filter-item category-link btn" href="' . get_category_link($category->term_id) . '">' . $category->name . '</a></li>'; 
 					} 
 				?>
 			</ul>
 		</div>
 	</div>
 	<div id="main-content" class="row">
-		<div class="col-md-12 js-filter">
+		<div class="col-md-12">
 			<?php
 				get_template_part( 'archive', 'loop' );
 			?>

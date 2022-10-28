@@ -1,5 +1,5 @@
 jQuery(document).ready(function() {
-    jQuery(document).on('click', '.js-filter-item > a', function(e) {
+    jQuery(document).on('click', '#cat-filter-item', function(e) {
         e.preventDefault();
 
         var category = jQuery(this).data('category');
