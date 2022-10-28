@@ -17,8 +17,6 @@ $page_id = get_option( 'page_for_posts' );
 		<div class="cats-carousel m-0">
 			<?php 
 				$categories = get_categories( array(
-					'orderby'       => 'name', //Defaults to 'date'
-					'order'         => 'ASC', //Defaults to 'DESC'.
 					'hide_empty'    => false, //defaults to true,
 				));
 			?>
@@ -33,7 +31,7 @@ $page_id = get_option( 'page_for_posts' );
 		</div>
 	</div>
 	<div id="main-content" class="row">
-		<div class="col-md-12">
+		<div class="col-md-12 js-filter">
 			<?php
 				get_template_part( 'archive', 'loop' );
 			?>
