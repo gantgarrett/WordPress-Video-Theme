@@ -18,7 +18,7 @@ function filter_ajax() {
 
     if($query->have_posts()) :
         while($query->have_posts()) : $query->the_post();
-            the_title('<h2>', '</h2>');
+            get_template_part('content', 'index');
         endwhile;
     endif;
     wp_reset_postdata();

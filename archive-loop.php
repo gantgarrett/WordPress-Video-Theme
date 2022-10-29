@@ -7,7 +7,7 @@ wp_video_theme_content_nav( 'nav-above' );
 
 if ( have_posts() ) :
 ?>
-	<div class="row js-filter">
+	<div class="row">
 	<?php
 		while ( have_posts() ) :
 			the_post();
