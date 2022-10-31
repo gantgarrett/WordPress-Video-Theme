@@ -14,7 +14,7 @@ $page_id = get_option( 'page_for_posts' );
 
 <div class="container-fluid p-0 d-flex flex-column">
 	<div class="cats-carousel-container mt-lg-0 mt-md-2 pt-2 pb-2 ps-2 pe-2">
-		<div class="cats-carousel m-0">
+		<div id="cats-container" class="cats-carousel m-0" style="width:85%;">
 			<?php 
 				$categories = get_categories( array(
 					'hide_empty'    => false, //defaults to true,

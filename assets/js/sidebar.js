@@ -9,4 +9,6 @@ function sidebarToggle() {
     var closedMenu = document.getElementById('closed-menu-id');
     closedMenu.style.display = closedMenu.style.display == 'none' ? 'block' : 'none';
 
+    var catsCarousel = document.getElementById('cats-container');
+    catsCarousel.style.width = catsCarousel.style.width == '85%' ? '95%' : '85%';
 }
