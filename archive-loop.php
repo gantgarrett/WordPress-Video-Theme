@@ -7,7 +7,7 @@ wp_video_theme_content_nav( 'nav-above' );
 
 if ( have_posts() ) :
 ?>
-	<div class="row">
+<div class="row d-flex flex-wrap">
 	<?php
 		while ( have_posts() ) :
 			the_post();
@@ -20,7 +20,7 @@ if ( have_posts() ) :
 			get_template_part( 'content', 'index' ); // Post format: content-index.php
 		endwhile;
 	?>
-	</div>
+</div>
 <?php
 endif;
 

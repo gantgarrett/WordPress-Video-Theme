@@ -4,7 +4,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'col-sm-6' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'col-lg-3 col-sm-4' ); ?>>
 	<div class="card mb-4">
 		<header class="card-body">
 			<h2 class="card-title">

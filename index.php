@@ -12,14 +12,12 @@ $page_id = get_option( 'page_for_posts' );
 
 <?php get_template_part( 'sidebar' ); ?>
 
-<div class="container-fluid p-0 d-flex flex-column">
+<div class="container p-0 d-flex flex-column">
 	<?php get_template_part('partials/content', 'catsCarousel'); ?>
-	<div id="main-content" class="row js-filter">
-		<div class="col-md-12">
-			<?php
-				get_template_part( 'archive', 'loop' );
-			?>
-		</div><!-- /.col -->
+	<div id="main-content" class="col d-flex flex-wrap px-5 js-filter">
+		<?php
+			get_template_part( 'archive', 'loop' );
+		?>
 	</div><!-- /.row -->
 </div>
 
