@@ -23,3 +23,10 @@
         background: #686868;
     }
 }
+
+.js-filter-item {
+    &.active {
+        background: #ffffff;
+        color: #000000;
+    }
+}
