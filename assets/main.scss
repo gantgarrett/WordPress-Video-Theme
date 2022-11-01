@@ -166,9 +166,11 @@ body {
 	}
 }
 
+
+
 #main-content {
-	@media only screen and (min-width: 1025px) {
-		padding-right: 18rem!important;
+	@media only screen and (max-width: 991px) {
+		padding-right: 0!important;
 	}
 }
 
