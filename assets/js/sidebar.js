@@ -13,5 +13,5 @@ function sidebarToggle() {
     catsCarousel.style.width = catsCarousel.style.width == '85%' ? '95%' : '85%';
 
     var mainContent = document.getElementById('main-content');
-    mainContent.style.paddingRight = mainContent.style.paddingRight == '18rem' ? '0rem' : '18rem';
+    mainContent.style.paddingRight = mainContent.style.paddingRight == '18rem' ? '6rem' : '18rem';
 }
