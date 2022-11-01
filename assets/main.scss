@@ -166,6 +166,12 @@ body {
 	}
 }
 
+#main-content {
+	@media only screen and (min-width: 1025px) {
+		padding-right: 18rem!important;
+	}
+}
+
 img {
 	vertical-align: middle;
 }

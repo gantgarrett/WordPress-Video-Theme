@@ -1,7 +1,7 @@
 jQuery(document).ready(function(){
     jQuery('.category-chips').slick({
         speed: 300,
-        slidesToScroll: 1,
+        slidesToScroll: 2,
         variableWidth: true,
         responsive: [
             {
