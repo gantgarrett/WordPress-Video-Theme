@@ -3,48 +3,16 @@
  * The template for displaying content in the index.php template.
  */
 ?>
+<div class="col-lg-3 col-md-4 px-2">
+	<div class="box d-flex flex-column">
+		<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>" class="card-img-top" alt="Hollywood Sign on The Hill" />
+		<div class="box-body">
+			<h5 class="card-title">Card title</h5>
+			<p class="card-text">
+				This is a longer card with supporting text below as a natural lead-in to
+				additional content. This content is a little bit longer.
+			</p>
+		</div>
+	</div>
+</div>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'col-xl-3 col-lg-6 col-md-6' ); ?>>
-	<div class="card mb-4" style="width:15rem">
-	<div class="card-body">
-			<div class="card-text entry-content">
-				<?php
-					if ( has_post_thumbnail() ) :
-						echo '<div class="post-thumbnail">' . get_the_post_thumbnail( get_the_ID()) . '</div>';
-					endif;
-
-					if ( is_search() ) :
-						the_excerpt();
-					else :
-						the_content();
-					endif;
-				?>
-				<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . esc_html__( 'Pages:', 'wp-video-theme' ) . '</span>', 'after' => '</div>' ) ); ?>
-			</div><!-- /.card-text -->
-			<footer class="entry-meta">
-				<a href="<?php echo get_the_permalink(); ?>" class="btn btn-outline-secondary"><?php esc_html_e( 'more', 'wp-video-theme' ); ?></a>
-			</footer><!-- /.entry-meta -->
-		</div><!-- /.card-body -->
-		<header class="card-body">
-			<h2 class="card-title">
-				<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'wp-video-theme' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
-			</h2>
-			<?php
-				if ( 'post' === get_post_type() ) :
-			?>
-				<div class="card-text entry-meta">
-					<?php
-						wp_video_theme_article_posted_on();
-
-						$num_comments = get_comments_number();
-						if ( comments_open() && $num_comments >= 1 ) :
-							echo ' <a href="' . get_comments_link() . '" class="badge badge-pill badge-secondary float-end" title="' . esc_attr( sprintf( _n( '%s Comment', '%s Comments', $num_comments, 'wp-video-theme' ), $num_comments ) ) . '">' . $num_comments . '</a>';
-						endif;
-					?>
-				</div><!-- /.entry-meta -->
-			<?php
-				endif;
-			?>
-		</header>
-	</div><!-- /.col -->
-</article><!-- /#post-<?php the_ID(); ?> -->
