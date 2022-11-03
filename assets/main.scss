@@ -200,11 +200,20 @@ img {
 	}
 }
 
+.img-container {
+	max-width: 500px;
+}
+
+.card-img-container {
+	position: relative;
+	padding-bottom: 56.2%;
+}
+
 .video-thumbnail {
-	width: 100%;
-	max-width: 360px;
-	height: 200px;
+	position: absolute;
 	object-fit: cover;
+	width: 100%;
+	height: 100%;
 }
 
 /* Header */
