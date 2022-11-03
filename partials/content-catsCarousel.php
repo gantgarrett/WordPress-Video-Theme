@@ -7,7 +7,7 @@
         ?>
         <ul class="category-chips container list-unstyled m-0">
             <?php
-                echo '<li class="category-item-pill px-1"><a id="cat-filter-item" class="js-filter-item category-link btn active" href="">All</a></li>';
+                echo '<li class="category-item-pill px-1"><a id="cat-filter-item" class="js-filter-item category-link btn active">All</a></li>';
                 foreach( $categories as $category ) {
                     echo '<li class="category-item-pill px-1"><a data-category="'. $category->name .'" id="cat-filter-item" class="js-filter-item category-link btn" href="' . get_category_link($category->term_id) . '">' . $category->name . '</a></li>'; 
                 } 
