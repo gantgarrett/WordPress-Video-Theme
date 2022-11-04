@@ -516,3 +516,59 @@ add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
  * @since v1.1
  */
 require_once('inc/ajax/ajax.php');
+
+add_action('init', 'register_video_cpt');
+function register_video_cpt() {
+	register_post_type('video', [
+		'label' => 'Videos',
+		'public' => true,
+		'capability_type' => 'post'
+	]);
+}
+
+add_action('wp_ajax_nopriv_get_videos_from_api', 'get_videos_from_api');
+add_action('wp_ajax_get_videos_from_api', 'get_videos_from_api');
+
+function get_videos_from_api() {
+	$videos = [];
+
+	$results = wp_remote_retrieve_body(wp_remote_get('your_api_url'));
+
+	$results = json_decode($results);
+
+	if( ! is_array($results) || empty($results)) {
+		return false;
+	}
+
+	$videos[] = $results;
+
+	foreach( $videos[0] as $video ) {
+		$video_slug = sanitize_title($video->title . '-' . $video->id);
+
+		$inserted_video = wp_insert_post([
+			'post_name' => $video_slug,
+			'post_title' => $video_slug,
+			'post_type' => 'video',
+			'post_status' => 'publish'
+		]);
+
+		if( is_wp_error($inserted_video)) {
+			continue;
+		}
+
+		$fillable = [
+			'field_6365413735e9a' => 'title',
+			'field_63654e6a35e9b' => 'url',
+			'field_63654e8b35e9c' => 'embed'
+		];
+
+		foreach($fillable as $key => $title) {
+			update_field($key, $video->$title, $inserted_video);
+		}
+	}
+
+	wp_remote_post( admin_url('admin-ajax.php?action=get_videos_from_api'), [
+		'blocking' => false,
+		'sslverify' => false,
+	]);
+} ?>
