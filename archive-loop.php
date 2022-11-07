@@ -3,25 +3,27 @@
  * The template for displaying the archive loop.
  */
 
-wp_video_theme_content_nav( 'nav-above' );
+wp_video_theme_content_nav( 'nav-above' ); ?>
 
-if ( have_posts() ) :
+<?php 
+	$videos = new WP_Query([
+		'post_type' => 'video',
+		'posts_per_page' => -1,
+		'order_by' => 'date',
+		'order' => 'desc',
+	]);
 ?>
-	<?php
-		while ( have_posts() ) :
-			the_post();
 
-			/**
-			 * Include the Post-Format-specific template for the content.
-			 * If you want to overload this in a child theme then include a file
-			 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-			 */
-			get_template_part( 'content', 'index' ); // Post format: content-index.php
-		endwhile;
-	?>
-<?php
-endif;
+<?php if ( $videos->have_posts() ) : ?>
+	<ul class="video-list">
+		<?php
+			while ( $videos->have_posts() ) :
+				$videos->the_post();
+				get_template_part( 'content', 'index' );
+			endwhile;
+		?>
+	</ul>
+	<?php wp_reset_postdata(); ?>
+<?php endif; ?>
 
-wp_reset_postdata();
-
-wp_video_theme_content_nav( 'nav-below' );
+<?php wp_video_theme_content_nav( 'nav-below' ); ?>

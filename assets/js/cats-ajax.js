@@ -1,19 +1,22 @@
-jQuery(document).ready(function() {
-    jQuery(document).on('click', '.js-filter-item', function(e) {
-        e.preventDefault();
+jQuery('.js-filter-item').on('click', function(e) {
+    e.preventDefault();
+    jQuery('.active').not(jQuery(this)).removeClass('active');
+    jQuery(this).toggleClass('active');
 
-        var category = jQuery(this).data('category');
-
-        jQuery.ajax({
-            url: wp_ajax.ajax_url,
-            data: { action: 'filter', category: category },
-            type: 'post',
-            success: function(result) {
-                jQuery('.js-filter').html(result);
-            },
-            error: function(result) {
-                console.warn(result);
-            }
-        });
-    });
+    jQuery.ajax({
+        type: 'POST',
+        url: '/wp-admin/admin-ajax.php',
+        dataType: 'html',
+        data: {
+            action: 'filter_videos',
+            category: jQuery(this).data('slug'),
+            type: jQuery(this).data('type'),
+        },
+        success: function(res) {
+            jQuery('.video-list').html(res);
+        },
+        error: function(res) {
+            console.warn(res);
+        }
+    })
 });

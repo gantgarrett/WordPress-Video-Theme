@@ -522,53 +522,36 @@ function register_video_cpt() {
 	register_post_type('video', [
 		'label' => 'Videos',
 		'public' => true,
-		'capability_type' => 'post'
+		'capability_type' => 'post',
+		'taxonomies'  => array( 'category' ),
+		'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments'),
 	]);
 }
 
-add_action('wp_ajax_nopriv_get_videos_from_api', 'get_videos_from_api');
-add_action('wp_ajax_get_videos_from_api', 'get_videos_from_api');
+function filter_videos() {
+	$catSlug = $_POST['category'];
+	$postType = $_POST['type'];
 
-function get_videos_from_api() {
-	$videos = [];
-
-	$results = wp_remote_retrieve_body(wp_remote_get('your_api_url'));
-
-	$results = json_decode($results);
-
-	if( ! is_array($results) || empty($results)) {
-		return false;
-	}
-
-	$videos[] = $results;
-
-	foreach( $videos[0] as $video ) {
-		$video_slug = sanitize_title($video->title . '-' . $video->id);
-
-		$inserted_video = wp_insert_post([
-			'post_name' => $video_slug,
-			'post_title' => $video_slug,
-			'post_type' => 'video',
-			'post_status' => 'publish'
-		]);
-
-		if( is_wp_error($inserted_video)) {
-			continue;
-		}
-
-		$fillable = [
-			'field_6365413735e9a' => 'title',
-			'field_63654e6a35e9b' => 'url',
-			'field_63654e8b35e9c' => 'embed'
-		];
-
-		foreach($fillable as $key => $title) {
-			update_field($key, $video->$title, $inserted_video);
-		}
-	}
-
-	wp_remote_post( admin_url('admin-ajax.php?action=get_videos_from_api'), [
-		'blocking' => false,
-		'sslverify' => false,
+	$ajaxvideos = new WP_Query([
+		'post_type' => $postType,
+		'posts_per_page' => -1,
+		'category_name' => $catSlug,
+		'orderby' => 'menu_order', 
+		'order' => 'desc',
 	]);
-} ?>
+	$response = '';
+
+	if($ajaxvideos->have_posts()) {
+		while($ajaxvideos->have_posts()) : $ajaxvideos->the_post();
+			$response .= get_template_part('content', 'index');
+		endwhile;
+	} else {
+		$response = 'empty';
+	}
+
+	echo $response;
+	exit;
+}
+
+add_action('wp_ajax_filter_videos', 'filter_videos');
+add_action('wp_ajax_nopriv_filter_videos', 'filter_videos'); ?>

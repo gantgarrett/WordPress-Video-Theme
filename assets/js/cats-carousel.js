@@ -34,9 +34,4 @@ jQuery(document).ready(function(){
     jQuery('.slick-next').click(function(){
         jQuery('.slick-prev').show();
     });
-
-    jQuery('.js-filter-item').click(function(){
-        jQuery('.active').not(jQuery(this)).removeClass('active');
-        jQuery(this).toggleClass('active');
-    });
 });
