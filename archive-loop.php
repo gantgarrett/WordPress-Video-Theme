@@ -15,7 +15,7 @@ wp_video_theme_content_nav( 'nav-above' ); ?>
 ?>
 
 <?php if ( $videos->have_posts() ) : ?>
-	<ul class="video-list">
+	<ul class="video-list row row-cols-4">
 		<?php
 			while ( $videos->have_posts() ) :
 				$videos->the_post();

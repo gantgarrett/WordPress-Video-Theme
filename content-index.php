@@ -3,7 +3,7 @@
  * The template for displaying content in the index.php template.
  */
 ?>
-<div class="col-lg-3 col-md-4 d-flex">
+<div class="col">
 	<div class="card d-flex flex-column align-items-stretch mb-3 px-2 w-100">
 		<div class="img-container">
 			<div class="card-img-container">

@@ -536,7 +536,7 @@ function filter_videos() {
 		'post_type' => $postType,
 		'posts_per_page' => -1,
 		'category_name' => $catSlug,
-		'orderby' => 'menu_order', 
+		'orderby' => 'date', 
 		'order' => 'desc',
 	]);
 	$response = '';
