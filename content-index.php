@@ -3,19 +3,32 @@
  * The template for displaying content in the index.php template.
  */
 ?>
-<div class="col">
-	<div class="card d-flex flex-column align-items-stretch mb-3 px-2 w-100">
+<div class="col-lg-3 col-md-6 col-sm-12">
+	<div class="card d-flex flex-column align-items-stretch mb-5 w-100 border-0">
 		<div class="img-container">
 			<div class="card-img-container">
-				<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" class="card-img-top video-thumbnail" alt="Hollywood Sign on The Hill" />
+				<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" class="card-img-top video-thumbnail rounded" alt="Hollywood Sign on The Hill" />
 			</div>
 		</div>
-		<div class="card-body">
-			<h5 class="card-title">Card title</h5>
-			<p class="card-text">
-				This is a longer card with supporting text below as a natural lead-in to
-				additional content. This content is a little bit longer.
-			</p>
+		<div class="card-body container-fluid p-0 pt-2">
+			<div class="row gx-3">
+				<div class="author-col col-auto">
+					<?php 
+						$author_id = get_post_field('post_author', $post->ID);
+						$output = get_avatar_url($author_id, ['size' => '32']);
+						echo '<img class="rounded-circle" src="'.$output.'"/>';
+					?>
+				</div>
+				<div class="video-info col">
+					<h6 class="card-title"><?php the_title(); ?></h6>
+					<div class="card-text d-flex flex-column text-secondary pt-1">
+						<?php the_author_meta('display_name'); ?> 
+						<div class="post-meta d-flex text-small">
+							1k Views &#8226; <?php echo meks_time_ago(); ?>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

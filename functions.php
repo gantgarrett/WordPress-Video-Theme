@@ -555,3 +555,7 @@ function filter_videos() {
 
 add_action('wp_ajax_filter_videos', 'filter_videos');
 add_action('wp_ajax_nopriv_filter_videos', 'filter_videos'); ?>
+
+<?php function meks_time_ago() {
+	return human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ).' '.__( 'ago' );
+} ?>

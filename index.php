@@ -14,7 +14,7 @@ $page_id = get_option( 'page_for_posts' );
 
 <div class="container p-0 d-flex flex-column">
 	<?php get_template_part('partials/content', 'catsCarousel'); ?>
-	<div id="main-content" class="container d-flex flex-wrap ps-5 pt-5 js-filter" style="padding-right:18rem;">
+	<div id="main-content" class="container d-flex flex-wrap ps-md-5 pt-5 ps-sm-0 js-filter" style="padding-right:18rem;">
 		<?php
 			get_template_part( 'archive', 'loop' );
 		?>
