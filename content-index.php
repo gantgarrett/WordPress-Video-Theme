@@ -3,7 +3,7 @@
  * The template for displaying content in the index.php template.
  */
 ?>
-<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 px-2">
 	<div class="card d-flex flex-column align-items-stretch mb-5 w-100 border-0">
 		<div class="img-container">
 			<div class="card-img-container">
@@ -11,7 +11,7 @@
 			</div>
 		</div>
 		<div class="card-body container-fluid p-0 pt-2">
-			<div class="row gx-3">
+			<div class="row gx-2">
 				<div class="author-col col-auto">
 					<?php 
 						$author_id = get_post_field('post_author', $post->ID);
