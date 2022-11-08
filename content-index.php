@@ -3,7 +3,7 @@
  * The template for displaying content in the index.php template.
  */
 ?>
-<div class="col-lg-3 col-md-6 col-sm-12">
+<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
 	<div class="card d-flex flex-column align-items-stretch mb-5 w-100 border-0">
 		<div class="img-container">
 			<div class="card-img-container">
@@ -24,7 +24,7 @@
 					<div class="card-text d-flex flex-column text-secondary pt-1">
 						<?php the_author_meta('display_name'); ?> 
 						<div class="post-meta d-flex text-small">
-							1k Views &#8226; <?php echo meks_time_ago(); ?>
+							1k views &#8226; <?php echo meks_time_ago(); ?>
 						</div>
 					</div>
 				</div>

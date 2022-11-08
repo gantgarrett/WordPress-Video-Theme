@@ -15,14 +15,16 @@ wp_video_theme_content_nav( 'nav-above' ); ?>
 ?>
 
 <?php if ( $videos->have_posts() ) : ?>
-	<ul class="video-list row row-cols-lg-4">
-		<?php
-			while ( $videos->have_posts() ) :
-				$videos->the_post();
-				get_template_part( 'content', 'index' );
-			endwhile;
-		?>
-	</ul>
+	<div class="container">
+		<ul class="video-list row">
+			<?php
+				while ( $videos->have_posts() ) :
+					$videos->the_post();
+					get_template_part( 'content', 'index' );
+				endwhile;
+			?>
+		</ul>
+	</div>
 	<?php wp_reset_postdata(); ?>
 <?php endif; ?>
 
