@@ -219,7 +219,7 @@ function wp_video_theme_widgets_init() {
 	// Area 2.
 	register_sidebar(
 		array(
-			'name'          => 'Secondary Widget Area (Header Navigation)',
+			'name'          => 'Secondary Widget Area',
 			'id'            => 'secondary_widget_area',
 			'before_widget' => '',
 			'after_widget'  => '',

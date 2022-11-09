@@ -115,7 +115,7 @@
 			// If Single or Archive (Category, Tag, Author or a Date based page).
 			if ( is_single() || is_archive() ) :
 		?>
-			<?php get_sidebar(); ?>
+			<?php get_sidebar('single'); ?>
 			<div class="row">
 				<div class="col-md-8 col-sm-12">
 		<?php

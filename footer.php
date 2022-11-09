@@ -4,10 +4,6 @@
 			?>
 					</div><!-- /.col -->
 
-					<?php
-						get_sidebar();
-					?>
-
 				</div><!-- /.row -->
 			<?php
 				endif;
