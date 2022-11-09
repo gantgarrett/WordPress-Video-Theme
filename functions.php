@@ -488,6 +488,7 @@ function wp_video_theme_scripts_loader() {
 	// 2. Scripts.
 	wp_enqueue_script( 'mainjs', get_theme_file_uri( 'assets/dist/main.bundle.js' ), array(), $theme_version, true );
 	wp_enqueue_script( 'sidebar', get_template_directory_uri() . '/assets/js/sidebar.js', array(), $theme_version, true );
+	wp_enqueue_script( 'sidebar-single', get_template_directory_uri() . '/assets/js/sidebar-single.js', array(), $theme_version, true );
 	//Slick carousel js
 	wp_enqueue_script( 'slick', get_template_directory_uri() . '/assets/slick-1.8.1/slick/slick.min.js', array(), $theme_version, true );
 	wp_enqueue_script( 'cats-carousel', get_template_directory_uri() . '/assets/js/cats-carousel.js', array('jquery'), $theme_version, true );

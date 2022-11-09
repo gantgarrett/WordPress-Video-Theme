@@ -26,9 +26,15 @@
 			<div class="container-fluid px-0">
 				<div class="row w-100 align-items-center">
 					<div class="col d-flex align-items-center">
-						<button onclick="sidebarToggle()" class="sidebar-toggler bg-dark border-0 py-2 px-2 mx-2" title="Sidebar Menu" type="button">
-							<?php echo file_get_contents(get_template_directory().'/assets/images/svg/hamburger.svg'); ?>
-						</button>
+						<?php if ( is_single() ) {
+							echo '<button onclick="sideBarSingleToggle()" class="sidebar-single-toggler bg-dark border-0 py-2 px-2 mx-2" title="Sidebar Menu" type="button">';
+								echo file_get_contents(get_template_directory() . '/assets/images/svg/hamburger.svg'); 
+							echo '</button>';
+						} else {
+							echo '<button onclick="sidebarToggle()" class="sidebar-toggler bg-dark border-0 py-2 px-2 mx-2" title="Sidebar Menu" type="button">';
+								echo file_get_contents(get_template_directory().'/assets/images/svg/hamburger.svg'); 
+							echo '</button>';
+						} ?>
 						<a class="navbar-brand d-flex p-0 pt-1 mx-1 ms-2" href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 							<?php
 								$header_logo = get_theme_mod( 'header_logo' ); // Get custom meta-value.
