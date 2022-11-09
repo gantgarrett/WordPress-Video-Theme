@@ -10,7 +10,7 @@ get_header();
 $page_id = get_option( 'page_for_posts' );
 ?>
 
-<?php get_template_part( 'sidebar' ); ?>
+<?php get_sidebar(); ?>
 
 <div class="container p-0 d-flex flex-column">
 	<?php get_template_part('partials/content', 'catsCarousel'); ?>
