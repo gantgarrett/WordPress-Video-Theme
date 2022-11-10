@@ -19,6 +19,7 @@ $card-bg: #181818;
 // Main colors 
 $bg-dark: #202020;
 $bg-secondary: #383939;
+$cats-link: #45a9ff;
 
 // Native navbar color changes
 $navbar-light-brand-color: #fff;
@@ -134,6 +135,7 @@ $link-decoration: none;
 @import "../assets/scss/sidebar";
 @import "../assets/scss/header";
 @import "../assets/scss/cats-carousel";
+@import "../assets/scss/single";
 
 /**
  * General
