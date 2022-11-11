@@ -123,13 +123,19 @@
 						<small class="fw-bold">1.3M views</small>
 						<small class="fw-bold">1 year ago</small>
 					</div>
-					<div class="description-text my-1 pe-3 mb-2 bg-dark border-0">
-						<?php the_content(); ?>
+					<div class="description-text my-1 pe-3 mb-2 border-0">
+						<div class="visible-content">
+							<small><?php echo wp_trim_words( get_the_content(), 40, '<span id="dots"><a href="#">...</a></span>' ); ?></small>
+						</div>
+						<div class="invisible-content">
+							<small><?php echo get_the_content(); ?></small>
+						</div>
+						<button type="button" class="btn ps-0 fw-bold">
+							Show more
+						</button>
 					</div>
-					<button>
-						Show More
-					</button>
 				</div>
+
 			</article><!-- /#post-<?php the_ID(); ?> -->
 		</div>
 		<div class="col-2">
