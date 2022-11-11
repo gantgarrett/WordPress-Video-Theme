@@ -120,11 +120,15 @@
 				</div>
 				<div class="description-inner bg-dark py-2 px-3 my-3 h-50">
 					<div class="entry-views-date-meta ">
-						<small class="fw-bold">1.3M views</small><small class="fw-bold">1 year ago</small>
+						<small class="fw-bold">1.3M views</small>
+						<small class="fw-bold">1 year ago</small>
 					</div>
-					<div class="description-text">
+					<div class="description-text my-1 pe-3 mb-2 bg-dark border-0">
 						<?php the_content(); ?>
 					</div>
+					<button>
+						Show More
+					</button>
 				</div>
 			</article><!-- /#post-<?php the_ID(); ?> -->
 		</div>
