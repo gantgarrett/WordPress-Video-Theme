@@ -20,9 +20,10 @@
 					?>
 				</header><!-- /.entry-header -->
 				<div class="entry-content mb-0">
+					<div class="embed-container">
+						<?php the_field('url'); ?>
+					</div>
 					<?php
-						the_content();
-
 						wp_link_pages( array( 'before' => '<div class="page-link"><span>' . esc_html__( 'Pages:', 'wp-video-theme' ) . '</span>', 'after' => '</div>' ) );
 					?>
 				</div><!-- /.entry-content -->
@@ -91,7 +92,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-6 px-0">
+						<div class="col-6 pe-4">
 							<div class="row justify-content-end">
 								<div class="col-auto px-1 d-flex justify-content-end">
 									<button type="button" class="badge rounded-pill bg-secondary border-0 py-2 px-3">
@@ -115,6 +116,14 @@
 								</div>
 							</div>
 						</div>
+					</div>
+				</div>
+				<div class="description-inner bg-dark py-2 px-3 my-3 h-50">
+					<div class="entry-views-date-meta ">
+						<small class="fw-bold">1.3M views</small><small class="fw-bold">1 year ago</small>
+					</div>
+					<div class="description-text">
+						<?php the_content(); ?>
 					</div>
 				</div>
 			</article><!-- /#post-<?php the_ID(); ?> -->
