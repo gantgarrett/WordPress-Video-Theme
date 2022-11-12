@@ -130,7 +130,7 @@
 						<div class="invisible-content">
 							<small><?php echo get_the_content(); ?></small>
 						</div>
-						<button type="button" class="btn ps-0 fw-bold">
+						<button type="button" class="showMoreLessBtn ps-0 fw-bold border-0 bg-dark text-white my-1">
 							Show more
 						</button>
 					</div>
