@@ -425,7 +425,7 @@ if ( ! function_exists( 'wp_video_theme_comment' ) ) {
 			'name_submit'          => 'submit',
 			'title_reply'          => '',
 			'title_reply_to'       => esc_html__( 'Leave a Reply to %s', 'wp-video-theme' ),
-			'cancel_reply_link'    => esc_html__( 'Cancel reply', 'wp-video-theme' ),
+			'cancel_reply_link'    => esc_html__( ' Cancel reply', 'wp-video-theme' ),
 			'label_submit'         => esc_html__( 'Post Comment', 'wp-video-theme' ),
 			'submit_button'        => '<input type="submit" id="%2$s" name="%1$s" class="%3$s" value="%4$s" />',
 			'submit_field'         => '<div class="form-submit">%1$s %2$s</div>',

@@ -138,7 +138,9 @@
 				<div class="container px-0">
 					<div class="row d-flex flex-column">
 						<div class="col">
-							<?php comments_template(); ?>
+							<?php if ( comments_open() || get_comments_number() ) :
+								comments_template(); 
+							endif; ?>
 						</div>
 					</div>
 				</div>
