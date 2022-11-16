@@ -147,7 +147,7 @@
 			</article><!-- /#post-<?php the_ID(); ?> -->
 		</div>
 		<div class="col-2">
-			<?php get_sidebar(); ?>
+			<?php get_sidebar('related-videos'); ?>
 		</div>
 	</div>
 </div>
