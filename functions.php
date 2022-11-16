@@ -279,7 +279,7 @@ function wp_video_theme_password_form() {
 			$output .= '<div class="col-md-6">';
 				$output .= '<div class="input-group">';
 					$output .= '<input type="password" name="post_password" id="' . esc_attr( $label ) . '" placeholder="' . esc_attr__( 'Password', 'wp-video-theme' ) . '" class="form-control" />';
-					$output .= '<div class="input-group-append"><input type="submit" name="submit" class="btn btn-primary" value="' . esc_attr__( 'Submit', 'wp-video-theme' ) . '" /></div>';
+					$output .= '<div class="input-group-append"><input type="submit" name="submit" class="btn btn-secondary" value="' . esc_attr__( 'Submit', 'wp-video-theme' ) . '" /></div>';
 				$output .= '</div><!-- /.input-group -->';
 			$output .= '</div><!-- /.col -->';
 		$output .= '</form>';
@@ -421,7 +421,7 @@ if ( ! function_exists( 'wp_video_theme_comment' ) ) {
 			'comment_notes_after'  => '',
 			'id_form'              => 'commentform',
 			'id_submit'            => 'submit',
-			'class_submit'         => 'btn btn-primary',
+			'class_submit'         => 'btn btn-secondary',
 			'name_submit'          => 'submit',
 			'title_reply'          => '',
 			'title_reply_to'       => esc_html__( 'Leave a Reply to %s', 'wp-video-theme' ),

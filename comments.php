@@ -1,6 +1,7 @@
 <?php
 /**
  * The template for displaying Comments.
+ * C:\Users\gantg\Local Sites\wp-video-theme\app\public\wp-content\themes\wp-video-theme\comments.php
  */
 
 /**
@@ -12,13 +13,13 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
-<div id="comments">
+<div id="comments" class="mt-0">
 	<?php
 		if ( comments_open() && ! have_comments() ) :
 	?>
-		<h2 id="comments-title">
+		<h2 id="comments-title" class="mt-0">
 			<?php
-				esc_html_e( 'No Comments yet!', 'wp-video-theme' );
+				esc_html_e( '0 Comments', 'wp-video-theme' );
 			?>
 		</h2>
 	<?php
@@ -26,11 +27,11 @@ if ( post_password_required() ) {
 
 		if ( have_comments() ) :
 	?>
-		<h2 id="comments-title">
+		<h2 id="comments-title" class="mt-0">
 			<?php
 				$comments_number = get_comments_number();
 				if ( '1' === $comments_number ) {
-					printf( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'wp-video-theme' ), get_the_title() );
+					esc_html_e( '1 Comment', 'wp-video-theme' );
 				} else {
 					printf(
 						/* translators: 1: number of comments, 2: post title */
@@ -47,6 +48,9 @@ if ( post_password_required() ) {
 				}
 			?>
 		</h2>
+			<?php // Show Comment Form (customized in functions.php).
+				comment_form(); 
+			?>
 		<?php
 			if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
 		?>
@@ -58,7 +62,7 @@ if ( post_password_required() ) {
 		<?php
 			endif;
 		?>
-		<ol class="commentlist">
+		<ol class="commentlist m-0 p-0 w-100">
 			<?php
 				/**
 				 * Loop through and list the comments. Tell wp_list_comments()
@@ -91,7 +95,5 @@ if ( post_password_required() ) {
 	<?php
 		endif;
 
-		// Show Comment Form (customized in functions.php).
-		comment_form();
 	?>
 </div><!-- /#comments -->

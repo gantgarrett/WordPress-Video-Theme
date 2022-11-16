@@ -86,7 +86,7 @@
 									</div>
 								</div>
 								<div class="col">
-									<button type="button" class="badge rounded-pill bg-danger border-0 py-2 px-3">
+									<button type="button" class="badge rounded-pill bg-secondary border-0 py-2 px-3">
 										<h6>Subscribe</h6>
 									</button>
 								</div>
@@ -135,7 +135,13 @@
 						</button>
 					</div>
 				</div>
-
+				<div class="container px-0">
+					<div class="row d-flex flex-column">
+						<div class="col">
+							<?php comments_template(); ?>
+						</div>
+					</div>
+				</div>
 			</article><!-- /#post-<?php the_ID(); ?> -->
 		</div>
 		<div class="col-2">
