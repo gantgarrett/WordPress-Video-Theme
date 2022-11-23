@@ -530,6 +530,13 @@ function register_video_cpt() {
 	]);
 }
 
+function wpdocs_create_video_tax_rewrite() {
+    register_taxonomy( 'tag', 'video', array(
+        'rewrite'      => array( 'slug' => 'videos/tag' )
+    ) );
+}
+add_action( 'init', 'wpdocs_create_video_tax_rewrite', 0 );
+
 function filter_videos() {
 	$catSlug = $_POST['category'];
 	$postType = $_POST['type'];

@@ -33,9 +33,11 @@
 
          if ( $get_posts->have_posts() ) : ?>
 
+            <?php get_template_part('partials/content', 'catsCarousel'); ?>
+
             <ul class="related_posts_list ps-0 mt-4">
              <?php while ( $get_posts->have_posts() ) : $get_posts->the_post(); ?>
-                <li class="container px-0 mb-3 border-0 list-unstyled">
+                <li class="container px-0 mb-2 border-0 list-unstyled">
                     <a href="<?php echo get_the_permalink(); ?>" class="row gx-1">
                         <div class="col">
                             <div class="img-container">
