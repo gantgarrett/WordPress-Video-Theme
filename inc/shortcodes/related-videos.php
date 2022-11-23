@@ -7,7 +7,7 @@
      $id = get_the_ID();  
 
      /*@ Get current post's Taxonomy */
-     $taxonomy_terms = wp_get_post_terms($id, 'category');  // Replace your taxonomy name
+     $taxonomy_terms = wp_get_post_terms($id, 'category');
 
      if (!empty($taxonomy_terms)) :
 
@@ -15,10 +15,10 @@
          $terms_ids = array_column( $taxonomy_terms, 'term_id' );
 
          $related_args = [
-             'post_type' => 'video',  // Replace your post type name
+             'post_type' => 'video',
              'tax_query' => [
              [
-                 'taxonomy' => 'category', // Replace your taxonomy name
+                 'taxonomy' => 'category',
                  'field'    => 'id',
                  'terms'    => $terms_ids,
                  'operator' => 'IN' // Options : 'AND' or 'NOT IN'
@@ -31,23 +31,33 @@
 
          $get_posts = new WP_Query( $related_args );
 
-         if ( $get_posts->have_posts() ) :
+         if ( $get_posts->have_posts() ) : ?>
 
-             echo '<ul class="related_posts_list">';
+            <ul class="related_posts_list ps-0 mt-4">
+             <?php while ( $get_posts->have_posts() ) : $get_posts->the_post(); ?>
+                <li class="container px-0 mb-3 border-0 list-unstyled">
+                    <a href="<?php echo get_the_permalink(); ?>" class="row gx-1">
+                        <div class="col">
+                            <div class="img-container">
+                                <div class="card-img-container">
+                                    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" class="card-img-top video-thumbnail rounded" alt="Insert dynamic content" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <p><?php echo wp_trim_words(get_the_title(), 7, '...' ); ?></p>
+                        </div>
+                    </a>
+                </li>
+             <?php endwhile; ?>
+            </ul>
 
-             while ( $get_posts->have_posts() ) : $get_posts->the_post();
-
-                 echo '<li><a href="'.get_the_permalink().'">'.get_the_title().'</a></li>';
-             endwhile;
-
-             echo '</ul>';
-
-         endif;
+        <?php endif; ?>
         
-     endif; 
+     <?php endif; ?>
 
-     return ob_get_clean(); 
+    <?php return ob_get_clean(); 
 
  }
  add_shortcode('tf_video_related_posts', 'tf_get_related_posts_for_videos');
-} ?>
+}; ?>

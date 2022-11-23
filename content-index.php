@@ -9,7 +9,7 @@
 		<div class="card d-flex flex-column align-items-stretch mb-5 w-100 border-0">
 			<div class="img-container">
 				<div class="card-img-container">
-					<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" class="card-img-top video-thumbnail rounded" alt="Hollywood Sign on The Hill" />
+					<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" class="card-img-top video-thumbnail rounded" alt="Insert dynamic content" />
 				</div>
 			</div>
 			<div class="card-body container-fluid p-0 pt-2">
