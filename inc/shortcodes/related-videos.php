@@ -33,7 +33,7 @@
 
          if ( $get_posts->have_posts() ) : ?>
 
-            <?php get_template_part('partials/content', 'catsCarousel'); ?>
+            <?php get_template_part('partials/content', 'catsSidebarCarousel'); ?>
 
             <ul class="related_posts_list ps-0 mt-4">
              <?php while ( $get_posts->have_posts() ) : $get_posts->the_post(); ?>

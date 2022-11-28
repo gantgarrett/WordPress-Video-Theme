@@ -5,7 +5,7 @@
  */
 ?>
 <div class="container p-5 pt-1">
-	<div class="row p-5 pt-0 g-3">
+	<div class="row p-5 pt-0 g-4 pe-0">
 		<div class="col-10">
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<header class="entry-header">
@@ -146,8 +146,10 @@
 				</div>
 			</article><!-- /#post-<?php the_ID(); ?> -->
 		</div>
-		<div class="col-2">
-			<?php get_sidebar('related-videos'); ?>
+		<div class="col-2 mt-5">
+			<div class="row d-flex flex-column justify-content-start">
+				<?php get_sidebar('related-videos'); ?>
+			</div>
 		</div>
 	</div>
 </div>
